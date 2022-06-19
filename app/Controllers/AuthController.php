@@ -145,7 +145,11 @@ class AuthController extends Controller
 
         // return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
 
+        /**
+         * if you comment this line, cookie will using old session and you are not logged in although successful with login process.
+         */
         Services::response()->getCookieStore()->clear();
+
         $success = [
             'messages' => 'Login Successfull',
         ];

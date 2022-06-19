@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://testauth.test';
+    public $baseURL = 'http://ajaxmythauth.test';
 
     /**
      * --------------------------------------------------------------------------
