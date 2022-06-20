@@ -46,6 +46,8 @@ $routes->get('test', function () {
 
     $newSession = session()->session_id;
     $newData = session()->get();
+    
+    // Services::response()->getCookieStore()->clear(); //uncoment this line it will send one Set Cookie
     return json_encode([
         'old' => $oldSession,
         'old_data' => $oldData,
