@@ -37,6 +37,28 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index', ['filter' => 'login']);
 
+
+$routes->get('test', function () {
+
+    $oldSession  = session()->session_id;
+
+    $oldData = session()->get();
+    session()->regenerate();
+
+    $newSession = session()->session_id;
+    $newData = session()->get();
+    return json_encode([
+        'old' => $oldSession,
+        'old_data' => $oldData,
+        'new' => $newSession,
+        'new_data' => $newData
+    ]);
+});
+
+$routes->get('info', function () {
+    phpinfo();
+});
+
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Login/out
     $routes->get('login', 'AuthController::login', ['as' => 'login']);
