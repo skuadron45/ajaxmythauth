@@ -54,6 +54,8 @@
 						<button type="submit" class="btn btn-primary btn-block"><?= lang('Auth.loginAction') ?></button>
 
 						<button id="btn-login" type="button" class="btn btn-primary btn-block">Login Ajax</button>
+
+						<button id="btn-test" type="button" class="btn btn-primary btn-block">Ajax GET</button>
 					</form>
 
 					<hr>
@@ -76,6 +78,7 @@
 <?= $this->section('pageScripts') ?>
 <script>
 	var LOGIN_URL = '<?= route_to('login-ajax') ?>';
+	var TEST_URL = '<?= route_to('test') ?>';
 </script>
 <script src="<?= base_url('login.js') ?>"></script>
 <?= $this->endSection() ?>

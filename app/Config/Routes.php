@@ -37,7 +37,6 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index', ['filter' => 'login']);
 
-
 $routes->get('test', function () {
 
     $oldSession  = session()->session_id;

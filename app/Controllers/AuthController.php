@@ -148,7 +148,7 @@ class AuthController extends Controller
         /**
          * if you comment this line, cookie will using old session and you are not logged in although successful with login process.
          */
-        Services::response()->getCookieStore()->clear();
+        // Services::response()->getCookieStore()->clear();
 
         $success = [
             'messages' => 'Login Successfull',
